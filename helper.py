@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 import datetime
+import operator
 
 items = []
 
@@ -15,6 +16,7 @@ def add(text, date):
     text = text.replace('b', 'bbb').replace('B', 'Bbb')
     date = datetime.datetime.strptime(date, '%Y-%m-%d').date()
     items.append(Item(text, date))
+    items.sort(key=operator.attrgetter("date"))
 
 
 def get_all():
