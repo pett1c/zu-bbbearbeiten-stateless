@@ -11,10 +11,9 @@ def index():
 @app.route('/add', methods=["POST"])
 def add():
     text = request.form.get("text")
-    helper.add(text)
-    print("Dummy line added by first user.")
-    print("Dummy line added by first user.")
-    print("Dummy line added by first user.") # another dummy-line
+    description = request.form.get("description", "")
+    helper.add(text, "2023-09-02", description)  # use a fixed date for the test
+    print("Dummy line added by second user.") # Dummy-line
     return redirect(url_for("index"))
 
 

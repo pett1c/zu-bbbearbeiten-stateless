@@ -22,7 +22,10 @@
                     <button class="ui blue button" type="submit">Hinzufügen</button>
                 </div>
             </div>
-
+            <div class="field" style="margin-top: 10px;">
+                <div for="description" class="ui pointing below label">Beschreibung</div>
+                <textarea name="description" placeholder="Details eingeben..."></textarea>
+            </div>
         </form>
 
         {% for item in items %}
@@ -35,6 +38,7 @@
             <a class="ui red left corner label" href="/update/{{loop.index0}}"><i
                     class="square outline icon icon"></i></a>
             {% endif %}
+            <div style="margin-left: 1em; margin-top: 0.5em;">{{item.description|default('Keine Beschreibung', true)}}</div>
         </div>
         {% endfor %}
     </div>
