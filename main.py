@@ -13,6 +13,7 @@ def add():
     text = request.form.get("text")
     description = request.form.get("description", "")
     helper.add(text, "2023-09-02", description)  # use a fixed date for the test
+    print("Dummy line added by second user.") # Dummy-line
     return redirect(url_for("index"))
 
 
