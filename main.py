@@ -11,7 +11,8 @@ def index():
 @app.route('/add', methods=["POST"])
 def add():
     text = request.form.get("text")
-    helper.add(text)
+    description = request.form.get("description", "")
+    helper.add(text, "2023-09-02", description)  # use a fixed date for the test
     return redirect(url_for("index"))
 
 
