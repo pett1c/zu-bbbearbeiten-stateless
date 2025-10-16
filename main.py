@@ -12,6 +12,9 @@ def index():
 def add():
     text = request.form.get("text")
     helper.add(text)
+    print("Dummy line added by first user.")
+    print("Dummy line added by first user.")
+    print("Dummy line added by first user.") # another dummy-line
     return redirect(url_for("index"))
 
 
